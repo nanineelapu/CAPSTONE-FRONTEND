@@ -78,7 +78,7 @@
                   >
                     <td>{{ subscriber.mobileNumber }}</td>
                     <td>{{ subscriber.name }}</td>
-                    <td>{{ subscriber.planExpiry | date }}</td>
+                    <td>{{ subscriber.planExpiry }}</td>
                   </tr>
                   <tr *ngIf="expiringSubscribers.length === 0">
                     <td colspan="3" style="text-align: center">
