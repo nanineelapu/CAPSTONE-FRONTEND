@@ -6,7 +6,7 @@
     --light-text: #777;
     --error-color: #e74c3c;
     --border-color: #ddd;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* --shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
 }
 
 /* ----------  GLOBAL RESET  ---------- */
@@ -161,7 +161,7 @@ nav a {
     padding: 2rem;
     background: transparent;
     border-radius: 10px;
-    box-shadow: var(--shadow);
+    /* box-shadow: var(--shadow); */
 }
 
 /* .login-container loginTitle {} */
@@ -379,7 +379,12 @@ footer {
     nav {
         flex-direction: column;
         gap: 0.75rem;
+        height: auto;
+        padding: 3vw 2vw;
+
     }
+
+
 
     .social-login p::before,
     .social-login p::after {
@@ -404,4 +409,89 @@ footer {
     font-size: 11vw;
     padding: 2vw 4vw;
     animation: fadeFromBottom .5s ease-out;
+}
+
+@media (max-width: 480px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+        font-size: 14px;
+        background-color: black;
+    }
+
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 2vw;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    nav button {
+        font-size: 4vw;
+        padding: 1vw 3vw;
+    }
+
+    .login-container h2 {
+        font-size: 6vw;
+    }
+
+    .input-group label {
+        font-size: 4vw;
+    }
+
+    .input-group input {
+        width: 80%;
+        padding: 2.5vw;
+        margin: 0 auto;
+        font-size: 4.5vw;
+    }
+
+    .validate-button {
+        width: 80%;
+        font-size: 4vw;
+        padding: 2vw;
+        margin: 2vw auto;
+    }
+
+
+
+    .error-message {
+        font-size: 3vw;
+        text-align: center;
+    }
+
+    .social-login p {
+        font-size: 3.5vw;
+    }
+
+    .social-login p::before,
+    .social-login p::after {
+        width: 15%;
+    }
+
+    .social-icons a {
+        width: 36px;
+        height: 36px;
+        font-size: 4vw;
+    }
+
+    .signup-link {
+        font-size: 4vw;
+    }
+
+    .footer-links a,
+    .copyright {
+        font-size: 3vw;
+    }
+
+    .step h1 {
+        font-size: 14vw;
+        padding: 4vw 2vw;
+    }
+
+    .container {
+        padding: 0 2vw;
+    }
 }

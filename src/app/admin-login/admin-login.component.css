@@ -67,7 +67,7 @@ body {
 }
 
 .step h1 {
-    font-family: "Funnel Display", sans-serif;
+    /* font-family: "Funnel Display", sans-serif; */
     font-size: 12vw;
     padding: 4vw 6vw;
 }
@@ -273,37 +273,103 @@ footer {
     font-size: 0.65rem;
 }
 
-/* ----------  RESPONSIVE TWEAKS  ---------- */
-@media (max-width: 768px) {
-    .login-container {
-        padding: 1.5rem;
-    }
-
-    input,
-    button[type="submit"] {
-        font-size: 1.5vw;
-    }
-
-    .step h1 {
-        font-size: 15vw;
-    }
-}
-
+/* ----------  MOBILE-OPTIMIZED STYLES FOR APPS  ---------- */
 @media (max-width: 480px) {
+
+    html,
+    body {
+        font-size: 14px;
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+    }
+
     nav {
         flex-direction: column;
-        gap: 0.75rem;
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding: 5vw 4vw;
         height: auto;
-        padding: 3vw 2vw;
     }
 
-    input,
-    button[type="submit"] {
-        font-size: 3vw;
-        padding: 2vw 3vw;
+    nav .items {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    button {
+        font-size: 4vw;
+        padding: 2.5vw 4vw;
+        width: 100%;
+    }
+
+    .container {
+        padding: 0 5vw;
+    }
+
+
+    .step {
+        display: none;
+    }
+
+
+
+    .login-container {
+        padding: 6vw 5vw;
+        box-shadow: none;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .login-container h2 {
+        font-size: 6vw;
+        margin-bottom: 2rem;
     }
 
     .input-group label {
+        font-size: 4vw;
+        margin-bottom: 1.5vw;
+    }
+
+    input {
+        font-size: 4vw;
+        padding: 3vw;
+        border-radius: 8px;
+    }
+
+    input::placeholder {
+        font-size: 4vw;
+    }
+
+    button[type="submit"] {
+        font-size: 4vw;
+        padding: 3.5vw;
+        border-radius: 8px;
+        margin-top: 4vw;
+    }
+
+    .step h1 {
+        font-size: 14vw;
+        padding: 4vw;
+    }
+
+    .error-message {
+        font-size: 3.5vw;
+        margin-top: 2vw;
+    }
+
+    footer {
         font-size: 3vw;
     }
+
+    .footer-links a {
+        font-size: 3.5vw;
+        margin: 0 1vw;
+    }
+
+    .version {
+        font-size: 2.5vw;
+    }
+
+
 }
