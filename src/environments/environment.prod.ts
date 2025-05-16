@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://localhost:8080/api' // Update for production
+  apiUrl: 'https://main.d2l6bpupzeebpz.amplifyapp.com', // Update for production
 };

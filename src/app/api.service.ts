@@ -56,7 +56,7 @@ export class ApiService {
 
   adminLogin(request: AdminLoginRequest): Observable<string> {
     return this.http
-      .post<{ token: string }>(`${this.apiUrl}/api/admin/login`, request)
+      .post<{ token: string }>(`${this.apiUrl}/api/auth/admin/login`, request)
       .pipe(
         map((response) => {
           if (!response.token) {
