@@ -83,7 +83,7 @@ export class ApiService {
 
   recharge(request: RechargeRequest): Observable<RechargeResponse> {
     return this.http
-      .post<RechargeResponse>(`${this.apiUrl}/api/recharge`, request, {
+      .post<RechargeResponse>(`${this.apiUrl}/api/user/recharge`, request, {
         headers: this.getHeaders(),
       })
       .pipe(catchError(this.handleError));
