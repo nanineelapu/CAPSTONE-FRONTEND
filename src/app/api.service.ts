@@ -83,14 +83,14 @@ export class ApiService {
 
   recharge(request: RechargeRequest): Observable<RechargeResponse> {
     return this.http
-      .post<RechargeResponse>(`${this.apiUrl}/user/recharge`, request, {
+      .post<RechargeResponse>(`${this.apiUrl}/api/user/recharge`, request, {
         headers: this.getHeaders(),
       })
       .pipe(catchError(this.handleError));
   }
   getExpiringSubscribers(): Observable<Subscriber[]> {
     return this.http
-      .get<Subscriber[]>(`${this.apiUrl}/admin/subscribers/expiring`, {
+      .get<Subscriber[]>(`${this.apiUrl}/api/admin/subscribers/expiring`, {
         headers: this.getHeaders(),
       })
       .pipe(catchError(this.handleError));

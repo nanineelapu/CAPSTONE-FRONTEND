@@ -2,7 +2,7 @@
 :root {
     --primary-color: #4a6bff;
     --secondary-color: #f5f7ff;
-    /* --text-color: #333; */
+    --text-color: white;
     --light-text: #777;
     --error-color: #e74c3c;
     --border-color: #ddd;
@@ -71,6 +71,7 @@ body {
 
 h2 {
     font-weight: 700;
+    color: white;
     /* font-family: "Funnel Display", sans-serif; */
 }
 
