@@ -22,9 +22,8 @@ html,
 body {
     width: 100%;
     height: 100%;
-    background-image: url(https://firebasestorage.googleapis.com/v0/b/naniportfolio-cadd2.appspot.com/o/particle-burst-golden-sparkle-shimmer-background-illustration.jpg?alt=media&token=65906f07-94c0-416e-adec-0a0b39519011);
-    filter: blur(5px) brightness(0.7);
-    background-position: 50% 0;
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/naniportfolio-cadd2.appspot.com/o/particle-burst-golden-sparkle-shimmer-background-illustration.jpg?alt=media&token=65906f07-94c0-416e-);
+    background-position: 70% 0;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
