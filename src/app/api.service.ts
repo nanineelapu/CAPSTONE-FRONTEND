@@ -1,14 +1,26 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpHeaders,
+} from '@angular/common/http';
 import { Observable, throwError, map } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { AdminLoginRequest, MobileValidationRequest, RechargeRequest, RechargeResponse, Plan, Subscriber, Recharge } from './models/modles';
+import {
+  AdminLoginRequest,
+  MobileValidationRequest,
+  RechargeRequest,
+  RechargeResponse,
+  Plan,
+  Subscriber,
+  Recharge,
+} from './models/modles';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiService {
-  private readonly apiUrl = 'http://localhost:8080/api';
+  private readonly apiUrl = 'https://capstone-production-c0b6.up.railway.app';
   private token: string | null = null;
 
   constructor(private http: HttpClient) {
@@ -31,7 +43,10 @@ export class ApiService {
     const token = this.getToken();
     if (token) {
       headers = headers.set('Authorization', `Bearer ${token}`);
-      console.log('Sending Authorization header:', headers.get('Authorization')); // Debug log
+      console.log(
+        'Sending Authorization header:',
+        headers.get('Authorization')
+      ); // Debug log
     } else {
       console.warn('No token available for request');
     }
@@ -39,9 +54,10 @@ export class ApiService {
   }
 
   adminLogin(request: AdminLoginRequest): Observable<string> {
-    return this.http.post<{ token: string }>(`${this.apiUrl}/auth/admin/login`, request)
+    return this.http
+      .post<{ token: string }>(`${this.apiUrl}/auth/admin/login`, request)
       .pipe(
-        map(response => {
+        map((response) => {
           if (!response.token) {
             throw new Error('No token received from server');
           }
@@ -53,26 +69,38 @@ export class ApiService {
   }
 
   validateMobile(request: MobileValidationRequest): Observable<Subscriber> {
-    return this.http.post<Subscriber>(`${this.apiUrl}/auth/validate-mobile`, request)
+    return this.http
+      .post<Subscriber>(`${this.apiUrl}/auth/validate-mobile`, request)
       .pipe(catchError(this.handleError));
   }
 
   getPlans(): Observable<Plan[]> {
-    return this.http.get<Plan[]>(`${this.apiUrl}/user/plans`)
+    return this.http
+      .get<Plan[]>(`${this.apiUrl}/user/plans`)
       .pipe(catchError(this.handleError));
   }
 
- recharge(request: RechargeRequest): Observable<RechargeResponse> {
-    return this.http.post<RechargeResponse>(`${this.apiUrl}/user/recharge`, request, { headers: this.getHeaders() })
+  recharge(request: RechargeRequest): Observable<RechargeResponse> {
+    return this.http
+      .post<RechargeResponse>(`${this.apiUrl}/user/recharge`, request, {
+        headers: this.getHeaders(),
+      })
       .pipe(catchError(this.handleError));
   }
   getExpiringSubscribers(): Observable<Subscriber[]> {
-    return this.http.get<Subscriber[]>(`${this.apiUrl}/admin/subscribers/expiring`, { headers: this.getHeaders() })
+    return this.http
+      .get<Subscriber[]>(`${this.apiUrl}/admin/subscribers/expiring`, {
+        headers: this.getHeaders(),
+      })
       .pipe(catchError(this.handleError));
   }
 
   getRechargeHistory(mobileNumber: string): Observable<Recharge[]> {
-    return this.http.get<Recharge[]>(`${this.apiUrl}/admin/subscribers/${mobileNumber}/history`, { headers: this.getHeaders() })
+    return this.http
+      .get<Recharge[]>(
+        `${this.apiUrl}/admin/subscribers/${mobileNumber}/history`,
+        { headers: this.getHeaders() }
+      )
       .pipe(catchError(this.handleError));
   }
 

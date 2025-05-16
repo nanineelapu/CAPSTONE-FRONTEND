@@ -519,95 +519,284 @@ footer {
     color: white;
 }
 
-/* ----------  RESPONSIVE TWEAKS  ---------- */
-@media (max-width: 768px) {
-    .recharge-container {
-        padding: 1.5rem;
-    }
-
-    .input-group label,
-    .input-group select,
-    .input-group input,
-    .submit-button {
-        font-size: 1.8vw;
-    }
-
-    .subscriber-info span {
-        font-size: 1.8vw;
-    }
-
-    .step h1 {
-        font-size: 15vw;
-    }
-}
-
 @media (max-width: 480px) {
+
+    /* NAVIGATION */
     nav {
+        display: flex;
         flex-direction: column;
-        gap: 0.75rem;
+        gap: 1rem;
         height: auto;
         padding: 3vw 2vw;
+        font-size: 4vw;
     }
 
-    .input-group label,
+    nav .icon {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+        justify-content: center;
+    }
+
+    nav .icon i {
+        font-size: 6vw !important;
+    }
+
+    nav .icon span#spaning {
+        font-size: clamp(16px, 6vw, 28px);
+        white-space: nowrap;
+    }
+
+    nav .items {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        width: 100%;
+    }
+
+    nav .items button {
+        width: 100%;
+        padding: 1.5vw 0;
+        font-size: 4vw;
+        border-radius: 10px;
+        border-width: 2px;
+    }
+
+    nav .items button a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        color: inherit;
+        font-weight: 700;
+    }
+
+    /* BUTTONS */
+    button {
+        font-size: 4vw;
+        padding: 1.5vw 3vw;
+        border-radius: 10px;
+        border-width: 2px;
+    }
+
+    /* PLANS CONTAINER */
+    .plans {
+        display: flex;
+        flex-direction: column;
+        gap: 2vw;
+        padding: 0 1vw;
+    }
+
+    .plan1,
+    .plan2,
+    .plan3,
+    .plan4 {
+        width: 100%;
+        height: auto;
+        margin: 1vw 0;
+        padding: 2vw 1vw;
+        box-sizing: border-box;
+    }
+
+    .plan1-content {
+        padding: 1vw 0;
+    }
+
+    .temp {
+        font-size: 3vw;
+        padding: 1vw 0;
+        margin: 1vw 0;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .temp i.material-icons {
+        font-size: 4vw !important;
+    }
+
+    .title span {
+        font-size: 4vw;
+        font-weight: 700;
+    }
+
+    .money span {
+        font-size: 5vw;
+        font-weight: 700;
+    }
+
+    .money p {
+        font-size: 3vw;
+        margin-top: 0.3rem;
+    }
+
+    .plan1-button {
+        width: 100%;
+        margin-top: 1vw;
+    }
+
+    .plan1-button button {
+        width: 100%;
+        font-size: 4vw;
+        padding: 2vw 0;
+        border-radius: 10px;
+    }
+
+    .content1 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 3.5vw;
+        margin-top: 1vw;
+    }
+
+    .content1 i.material-icons {
+        font-size: 5vw !important;
+    }
+
+    /* ROW2 PLANS */
+    .row2 {
+        display: flex;
+        flex-direction: column;
+        gap: 2vw;
+        padding: 0 1vw;
+    }
+
+    /* BUTTONS GROUP */
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 2vw;
+        margin-top: 3vw;
+        font-size: 4vw;
+        padding: 0 2vw;
+    }
+
+    .buttons button {
+        width: 100%;
+        padding: 2vw 0;
+        border-radius: 15px;
+        font-weight: 700;
+    }
+
+    /* FORM CONTAINER */
+    #recharge-container main .recharge-container {
+        padding: 1rem;
+        box-shadow: none;
+    }
+
+    /* FORM HEADINGS */
+    #rechargeTitle {
+        font-size: 6vw;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    /* SUBSCRIBER INFO */
+    .subscriber-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1vw;
+        padding: 2vw 0;
+        font-size: 4vw;
+    }
+
+    .subscriber-info i {
+        font-size: 6vw;
+        margin-bottom: 1vw;
+    }
+
+    /* FORM GROUPS */
+    .input-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .input-group label {
+        font-size: 4vw;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 0.7rem;
+    }
+
     .input-group select,
-    .input-group input,
-    .submit-button {
-        font-size: 3vw;
+    .input-group input {
+        font-size: 4vw;
+        padding: 2vw 1.5vw;
+        border-width: 2px;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 10px;
     }
 
-    .subscriber-info span {
-        font-size: 3vw;
+    .submit-button {
+        font-size: 4vw;
+        padding: 2vw;
+        width: 100%;
+        border-radius: 12px;
+    }
+
+    /* CARD DETAILS */
+    .card-details {
+        margin-top: 1rem;
     }
 
     .card-row {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .card-field input {
+        width: 100%;
+    }
+
+    /* ERROR & SUCCESS MESSAGES */
+    .error-message {
+        font-size: 3vw;
+        color: #ff6b6b;
+        margin-top: 0.3rem;
+    }
+
+    .success-message {
+        font-size: 3vw;
+        color: #4caf50;
+        margin-top: 0.3rem;
+    }
+
+    /* FOOTER */
+    footer {
+        font-size: 3vw;
+        padding: 1rem 1rem 2rem 1rem;
+        text-align: center;
+    }
+
+    footer .footer-links {
+        display: flex;
         flex-direction: column;
         gap: 1rem;
-    }
-}
-
-@keyframes fadeFromBottom {
-    0% {
-        opacity: 0;
-        transform: translateY(40px);
+        margin-bottom: 1rem;
     }
 
-    100% {
-        opacity: 1;
-        transform: translateY(0);
+    footer .footer-links a {
+        font-size: 3.5vw;
+        color: inherit;
+        text-decoration: none;
     }
-}
 
-.step h1 {
-    font-family: "Funnel Display", sans-serif;
-    font-size: 11vw;
-    padding: 2vw 4vw;
-    animation: fadeFromBottom .5s ease-out;
-    color: white;
-}
+    footer .copyright p {
+        margin: 0.2rem 0;
+    }
 
-/* Add styling for the section with ID "cat" */
-#cat {
-    padding-top: 2rem;
-    scroll-margin-top: 2rem;
-    /* This ensures the section doesn't get hidden under fixed elements */
-}
+    footer .version {
+        font-size: 2.5vw;
+        color: #888;
+    }
 
-/* Add styling for the plan buttons with anchor links */
-.plan1-button a {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-/* Fix for select dropdown text color */
-select {
-    color-scheme: dark;
-}
-
-/* Fix for placeholder text color */
-::placeholder {
-    color: rgba(255, 255, 255, 0.7);
+    /* SCROLL OFFSET */
+    #cat {
+        scroll-margin-top: 5rem;
+    }
 }
