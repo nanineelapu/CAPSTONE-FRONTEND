@@ -15,12 +15,13 @@ import {
   Subscriber,
   Recharge,
 } from './models/modles';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
-  private readonly apiUrl = 'https://capstone-production-c0b6.up.railway.app';
+  private readonly apiUrl = environment.apiUrl;
   private token: string | null = null;
 
   constructor(private http: HttpClient) {
