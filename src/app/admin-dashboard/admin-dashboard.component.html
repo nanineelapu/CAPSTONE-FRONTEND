@@ -117,6 +117,7 @@
                   maxlength="10"
                 />
                 <div
+                  style="color: white"
                   *ngIf="
                     historyForm.get('mobileNumber')?.hasError('required') &&
                     historyForm.get('mobileNumber')?.touched
@@ -126,6 +127,7 @@
                   Mobile number is required
                 </div>
                 <div
+                  style="color: white"
                   *ngIf="
                     historyForm.get('mobileNumber')?.hasError('pattern') &&
                     historyForm.get('mobileNumber')?.touched

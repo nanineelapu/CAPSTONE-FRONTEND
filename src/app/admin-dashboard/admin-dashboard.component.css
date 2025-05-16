@@ -108,7 +108,7 @@ button {
 
 button:hover {
     background: white;
-    color: white;
+    color: black;
 }
 
 .items {
@@ -202,7 +202,7 @@ th {
 }
 
 tr:nth-child(even) {
-    background-color: #f8f9fa;
+    background-color: transparent;
 }
 
 tr:hover {
@@ -243,6 +243,8 @@ tr {
 
 input {
     background: transparent;
+    color: white;
+    border: 1px solid white;
 }
 
 .btn-search {
