@@ -77,7 +77,7 @@ export class ApiService {
 
   getPlans(): Observable<Plan[]> {
     return this.http
-      .get<Plan[]>(`${this.apiUrl}/user/plans`)
+      .get<Plan[]>(`${this.apiUrl}/api/user/plans`)
       .pipe(catchError(this.handleError));
   }
 
