@@ -1,0 +1,82 @@
+<div class="payment-container">
+  <div class="payment-card">
+    <div class="payment-header">
+      <h2>Complete Your Payment</h2>
+      <div class="payment-logo">
+        <i class="fas fa-broadcast-tower"></i>
+        <span>Tech-M SIM/ESIM</span>
+      </div>
+    </div>
+
+    <div class="payment-details">
+      <div class="detail-row">
+        <span class="label">Mobile Number:</span>
+        <span class="value">{{ paymentDetails.mobileNumber || "N/A" }}</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Plan Amount:</span>
+        <span class="value">₹{{ paymentDetails.amount || "N/A" }}</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Payment Method:</span>
+        <span class="value">{{ paymentDetails.paymentMethod || "N/A" }}</span>
+      </div>
+      <div class="detail-row" *ngIf="paymentDetails.paymentMethod === 'UPI'">
+        <span class="label">UPI ID:</span>
+        <span class="value">suryakondisetti564&#64;okicici</span>
+      </div>
+    </div>
+
+    <div class="payment-divider"></div>
+
+    <div *ngIf="!successMessage" class="payment-action">
+      <p class="payment-info">
+        <i class="fas fa-info-circle"></i>
+        Please confirm your payment details above.
+      </p>
+
+      <div class="button-group">
+        <button type="button" class="cancel-btn" (click)="cancelPayment()">
+          <i class="fas fa-times"></i> Cancel
+        </button>
+        <button
+          type="button"
+          class="submit-btn"
+          [disabled]="loading"
+          (click)="confirmPayment()"
+        >
+          <i *ngIf="loading" class="fas fa-spinner fa-spin"></i>
+          <i *ngIf="!loading" class="fas fa-check"></i>
+          {{ loading ? "Processing..." : "Confirm Payment" }}
+        </button>
+      </div>
+    </div>
+
+    <div *ngIf="successMessage" class="success-section">
+      <div class="success-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <p class="success-message">{{ successMessage }}</p>
+      <div class="transaction-details">
+        <p><strong>Transaction ID:</strong> {{ transactionId }}</p>
+        <p><strong>Date & Time:</strong> {{ transactionTime }}</p>
+      </div>
+      <p class="email-sent">
+        A confirmation email has been sent to your registered email address.
+      </p>
+      <p class="countdown">Redirecting in {{ countdown }} seconds...</p>
+    </div>
+
+    <div *ngIf="errorMessage" class="error-section">
+      <div class="error-icon">
+        <i class="fas fa-exclamation-circle"></i>
+      </div>
+      <p class="error-message">{{ errorMessage }}</p>
+    </div>
+
+    <div class="secure-info">
+      <i class="fas fa-lock"></i>
+      <span>Your payment information is secure and encrypted</span>
+    </div>
+  </div>
+</div>

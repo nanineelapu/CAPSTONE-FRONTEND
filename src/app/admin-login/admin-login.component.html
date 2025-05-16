@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login - Mobile Prepaid Recharge</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="step">
+      <h1>.02</h1>
+    </div>
+    <nav>
+      <div class="icon" style="gap: 10px; display: flex; align-items: center">
+        <a routerLink="/" style="display: flex; align-items: center; gap: 10px">
+          <i
+            class="fas fa-broadcast-tower"
+            style="font-size: 20px"
+            gap="10px"
+          ></i> </a
+        ><span style="font-size: 2vw"><strong> Tech-M SIM/ESIM</strong> </span>
+      </div>
+
+      <div class="items">
+        <button>
+          <a routerLink="/"><strong> User Recharge </strong></a>
+        </button>
+        <button>
+          <a routerLink="/admin-login"><strong> Admin Login </strong></a>
+        </button>
+      </div>
+    </nav>
+    <div class="container">
+      <main>
+        <div class="login-container">
+          <h2>
+            <i class="fas fa-user-shield" style="margin-right: 0.5vw"></i>
+            Admin Login
+          </h2>
+
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="input-group">
+              <label for="username">
+                <i class="fas fa-user" style="margin-right: 0.5vw"></i>
+                Username
+              </label>
+              <input
+                id="username"
+                type="text"
+                formControlName="username"
+                placeholder="Enter your username"
+                required
+              />
+              <p
+                style="color: white"
+                *ngIf="
+                  loginForm.get('username')?.hasError('required') &&
+                  loginForm.get('username')?.touched
+                "
+              >
+                Username is required
+              </p>
+            </div>
+
+            <div class="input-group">
+              <label for="password">
+                <i class="fas fa-lock" style="margin-right: 0.5vw"></i>
+                Password
+              </label>
+              <input
+                id="password"
+                type="password"
+                formControlName="password"
+                placeholder="Enter your password"
+                required
+              />
+              <p
+                style="color: white"
+                *ngIf="
+                  loginForm.get('password')?.hasError('required') &&
+                  loginForm.get('password')?.touched
+                "
+              >
+                Password is required
+              </p>
+            </div>
+
+            <button type="submit" [disabled]="loginForm.invalid">
+              Login <i class="fas fa-sign-in-alt"></i>
+            </button>
+
+            <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+          </form>
+        </div>
+      </main>
+
+      <footer>
+        <div class="footer-links">
+          <a href="#">Terms of Service</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Help & Support</a>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2023 Mobile Prepaid Recharge. All rights reserved.</p>
+          <p class="version">v1.0.0</p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="login.js"></script>
+  </body>
+</html>

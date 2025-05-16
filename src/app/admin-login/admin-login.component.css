@@ -1,0 +1,309 @@
+/* ----------  CSS VARIABLES  ---------- */
+:root {
+    --primary-color: #4a6bff;
+    --secondary-color: #f5f7ff;
+    --text-color: #ffffff;
+    --light-text: #cccccc;
+    --error-color: #ff6b6b;
+    --border-color: #444;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ----------  GLOBAL RESET  ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-image: url(https://cdn.prod.website-files.com/67d94a83b4dcb2e406b897dc/67e0df44d2c924e56a59a11f_Core%20Feature%20Bg.jpg);
+    background-position: 50% 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-color);
+}
+
+/* Page animation */
+body {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.step {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    color: white;
+    font-size: 2rem;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.step h1 {
+    font-family: "Funnel Display", sans-serif;
+    font-size: 12vw;
+    padding: 4vw 6vw;
+}
+
+/* ----------  NAVBAR  ---------- */
+nav {
+    width: 100%;
+    height: 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 0vw 0vw;
+    padding: 4vw 2vw;
+    background: transparent;
+    color: white;
+}
+
+button {
+    border: 2px solid white;
+    padding: .5vw 1vw;
+    border-radius: 40px;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2vw;
+    transition: all 0.4s ease;
+}
+
+button:hover {
+    background: white;
+    color: black;
+}
+
+.items {
+    display: flex;
+    gap: 1vw;
+}
+
+nav a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ----------  LAYOUT WRAPPER  ---------- */
+@keyframes fadeInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    animation: fadeInFromBottom 0.6s ease-out forwards;
+}
+
+/* ----------  LOGIN CARD  ---------- */
+.login-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: transparent;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+    border: transparent;
+}
+
+.login-container h2 {
+    font-family: 'Funnel Display', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: white;
+    font-size: 3vw;
+}
+
+/* ----------  FORM ELEMENTS  ---------- */
+.input-group {
+    position: relative;
+    margin-bottom: 1.25rem;
+}
+
+.input-group label {
+    font-size: 1.5vw;
+    display: flex;
+    margin-bottom: 0.5vw;
+    color: white;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 0.8vw 1.2vw;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: transparent;
+    border-radius: 5px;
+    font-size: 1.2vw;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+input::placeholder {
+    color: rgb(255, 255, 255);
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 0.8vw 0;
+    margin-top: 1vw;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    font-size: 1.2vw;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5vw;
+}
+
+button[type="submit"]:hover {
+    background-color: white;
+    color: black;
+}
+
+button[type="submit"]:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+p {
+    color: var(--error-color);
+    font-size: 0.9vw;
+    margin-top: 0.4vw;
+}
+
+/* ----------  ERROR MESSAGE  ---------- */
+@keyframes pulse {
+    0% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.6;
+    }
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 1vw;
+    text-align: center;
+    margin-top: 1vw;
+    animation: pulse 1.5s infinite;
+}
+
+/* ----------  FOOTER  ---------- */
+footer {
+    margin: 2.5rem 0 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--light-text);
+}
+
+.footer-links {
+    margin-bottom: 0.75rem;
+    color: white;
+}
+
+.footer-links a {
+    margin: 0 0.6rem;
+    color: white;
+    text-decoration: none;
+}
+
+.copyright {
+    color: white;
+}
+
+.version {
+    font-size: 0.65rem;
+}
+
+/* ----------  RESPONSIVE TWEAKS  ---------- */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 1.5rem;
+    }
+
+    input,
+    button[type="submit"] {
+        font-size: 1.5vw;
+    }
+
+    .step h1 {
+        font-size: 15vw;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column;
+        gap: 0.75rem;
+        height: auto;
+        padding: 3vw 2vw;
+    }
+
+    input,
+    button[type="submit"] {
+        font-size: 3vw;
+        padding: 2vw 3vw;
+    }
+
+    .input-group label {
+        font-size: 3vw;
+    }
+}

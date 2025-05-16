@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile Prepaid Recharge - Login</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="page-animation">
+      <!-- <div class="step">
+        <h1>.01</h1>
+      </div> -->
+      <nav>
+        <div class="icon" style="gap: 10px; display: flex; align-items: center">
+          <a
+            routerLink="/"
+            style="display: flex; align-items: center; gap: 10px"
+          >
+            <i
+              class="fas fa-broadcast-tower"
+              style="font-size: 20px"
+              gap="10px"
+            ></i> </a
+          ><span style="font-size: 2vw"
+            ><strong> Tech-M SIM/ESIM</strong>
+          </span>
+        </div>
+
+        <div class="items">
+          <button>
+            <a routerLink="/"><strong> User Recharge </strong></a>
+          </button>
+          <button>
+            <a routerLink="/admin-login"><strong> Admin Login </strong></a>
+          </button>
+        </div>
+      </nav>
+      <div class="container">
+        <main>
+          <div class="login-container">
+            <h2 id="loginTitle">Validate Mobile Number</h2>
+
+            <div class="error-message" id="errorMessage"></div>
+            <form [formGroup]="validationForm" (ngSubmit)="onSubmit()">
+              <div class="input-group">
+                <label for="mobileNumber"
+                  ><strong>+91 Mobile Number </strong></label
+                >
+                <input
+                  class="input-field center-text"
+                  id="mobileNumber"
+                  type="text"
+                  formControlName="mobileNumber"
+                  maxlength="10"
+                  placeholder="Enter number to validate"
+                  required
+                />
+                <p
+                  style="margin: 0vw 3vw"
+                  *ngIf="
+                    validationForm.get('mobileNumber')?.hasError('required') &&
+                    validationForm.get('mobileNumber')?.touched
+                  "
+                >
+                  Mobile number is required
+                </p>
+                <p
+                  style="margin: 0vw 3vw"
+                  *ngIf="
+                    validationForm.get('mobileNumber')?.hasError('pattern') &&
+                    validationForm.get('mobileNumber')?.touched
+                  "
+                >
+                  Enter a valid 10-digit number
+                </p>
+              </div>
+              <button
+                class="validate-button"
+                type="submit"
+                [disabled]="validationForm.invalid"
+              >
+                Validate
+              </button>
+              <p *ngIf="errorMessage">{{ errorMessage }}</p>
+            </form>
+
+            <div class="social-login" id="socialLogin">
+              <p>Or login with</p>
+              <div class="social-icons">
+                <a href="#"><i class="fab fa-google"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </div>
+            </div>
+
+            <div class="signup-link" id="signupLink">
+              <p>
+                Are you admin?
+                <a routerLink="/admin-login">Adminstrator Login</a>
+              </p>
+            </div>
+          </div>
+        </main>
+
+        <footer>
+          <div class="security-badges">
+            <!-- <img src="security-badge.png" alt="Security Certified" /> -->
+          </div>
+          <div class="footer-links">
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Help & Support</a>
+          </div>
+          <div class="copyright">
+            <p>&copy; 2023 Mobile Prepaid Recharge. All rights reserved.</p>
+            <p class="version">v1.0.0</p>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script src="login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,345 @@
+/* ----------  CSS VARIABLES  ---------- */
+:root {
+    --primary-color: #4a6bff;
+    --secondary-color: #f5f7ff;
+    --text-color: #333;
+    --light-text: #777;
+    --error-color: #e74c3c;
+    --border-color: #ddd;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ----------  GLOBAL RESET  ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-image: url(https://cdn.prod.website-files.com/67d94a83b4dcb2e406b897dc/67dfe09331ad3adc06291810_Hero%20Section%20V2%20Bg.jpg);
+    background-position: 50% 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--secondary-color);
+    color: var(--text-color);
+}
+
+/* Page animation */
+body {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.step {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    color: black;
+    font-size: 2rem;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.step h1 {
+    font-family: "Funnel Display", sans-serif;
+    font-size: 12vw;
+    padding: 4vw 6vw;
+}
+
+/* ----------  NAVBAR  ---------- */
+nav {
+    width: 100%;
+    height: 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 0vw 0vw;
+    padding: 2vw 2vw;
+    background: transparent;
+    color: #111;
+}
+
+button {
+    border: 2px solid black;
+    padding: .5vw 1vw;
+    border-radius: 40px;
+    background: transparent;
+    color: black;
+    cursor: pointer;
+    font-size: 1.2vw;
+    transition: all 0.4s ease;
+}
+
+button:hover {
+    background: black;
+    color: white;
+}
+
+.items {
+    display: flex;
+    gap: 1vw;
+}
+
+nav a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ----------  LAYOUT WRAPPER  ---------- */
+@keyframes fadeInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    animation: fadeInFromBottom 0.6s ease-out forwards;
+}
+
+/* ----------  DASHBOARD CARDS  ---------- */
+.dashboard-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card-header h3 {
+    font-size: 1.5vw;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    color: #333;
+}
+
+.card-header h3 i {
+    margin-right: 0.8vw;
+    color: var(--primary-color);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+/* ----------  TABLE STYLES  ---------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th,
+td {
+    padding: 1vw;
+    text-align: left;
+    border: 1px solid var(--border-color);
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* ----------  FORM STYLES  ---------- */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5vw;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.8vw 1vw;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1vw;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.btn-search {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8vw 1.5vw;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1vw;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5vw;
+}
+
+.btn-search:hover {
+    background-color: #3a5ae8;
+}
+
+.btn-search:disabled {
+    background-color: #a0a0a0;
+    cursor: not-allowed;
+}
+
+/* ----------  ERROR MESSAGE  ---------- */
+.error-message {
+    color: var(--error-color);
+    margin-top: 0.5rem;
+    font-size: 0.9vw;
+}
+
+/* ----------  FOOTER  ---------- */
+footer {
+    margin: 2.5rem 0 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--light-text);
+}
+
+.footer-links {
+    margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+    margin: 0 0.6rem;
+    color: var(--light-text);
+    text-decoration: none;
+}
+
+.copyright {
+    color: var(--light-text);
+}
+
+.version {
+    font-size: 0.65rem;
+}
+
+/* ----------  RESPONSIVE TWEAKS  ---------- */
+@media (max-width: 768px) {
+    .card-header h3 {
+        font-size: 2vw;
+    }
+
+    th,
+    td {
+        padding: 1.5vw;
+        font-size: 1.8vw;
+    }
+
+    .form-control,
+    .btn-search {
+        font-size: 1.8vw;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column;
+        gap: 0.75rem;
+        height: auto;
+        padding: 3vw 2vw;
+    }
+
+    .card-header h3 {
+        font-size: 4vw;
+    }
+
+    th,
+    td {
+        padding: 2vw;
+        font-size: 3vw;
+    }
+
+    .form-control,
+    .btn-search {
+        font-size: 3vw;
+        padding: 2vw;
+    }
+}
+
+/* Animation for cards */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-slideIn {
+    animation: slideIn 0.6s ease-out forwards;
+}

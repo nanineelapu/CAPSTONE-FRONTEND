@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile Prepaid Recharge</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="page-animation">
+      <nav>
+        <div class="icon" style="gap: 10px; display: flex; align-items: center">
+          <a
+            routerLink="/"
+            style="display: flex; align-items: center; gap: 10px"
+          >
+            <i
+              class="fas fa-broadcast-tower"
+              style="font-size: 20px"
+              gap="10px"
+            ></i> </a
+          ><span style="font-size: 2vw"
+            ><strong> Tech-M SIM/ESIM</strong>
+          </span>
+        </div>
+
+        <div class="items">
+          <button>
+            <a routerLink="/"><strong> User Recharge </strong></a>
+          </button>
+          <button>
+            <a routerLink="/admin-login"><strong> Admin Login </strong></a>
+          </button>
+        </div>
+      </nav>
+      <div class="plans">
+        <div class="plan1">
+          <div class="plan1-content">
+            <div class="temp">
+              Our Best Plan
+              <i class="material-icons">star</i>
+            </div>
+            <div class="title">
+              <span>TECH-M Unlimited Premium </span>
+            </div>
+            <div class="money">
+              <span> Rs.599 </span>
+              <p>84 Days-Validity</p>
+            </div>
+          </div>
+          <a [routerLink]="[]" [fragment]="'cat'" class="plan1-button">
+            <button class="plan1-button">Select Plan</button>
+          </a>
+          <div class="plan1-content">
+            <!-- icon  -->
+            <div class="content1">
+              <i class="material-icons">phone_iphone</i>
+              <p>Unlimited talk, Popular choice pack,2.5GB/day ,100 SMS/day</p>
+            </div>
+          </div>
+        </div>
+        <div class="plan2">
+          <div class="plan1-content">
+            <div class="temp">
+              Most Popular
+              <i class="material-icons">star</i>
+            </div>
+            <div class="title">
+              <span>TECH-M Premium Validity Pack </span>
+            </div>
+            <div class="money">
+              <span> Rs.379 </span>
+              <p>56 Days-Validity</p>
+            </div>
+            <a [routerLink]="[]" [fragment]="'cat'" class="plan1-button">
+              <button class="plan1-button">Select Plan</button>
+            </a>
+
+            <div class="plan1-content">
+              <!-- icon  -->
+              <div class="content1">
+                <i class="material-icons">phone_iphone</i>
+                <p>
+                  Unlimited talk, text, data + 75GB of high-speed data After
+                  75GB, TECH-M may temporarily slow data speeds if the network
+                  is busy.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="plan3">
+          <div class="plan1-content">
+            <div class="title">
+              <span>TECH-M Standard Unlimited Pack</span>
+            </div>
+            <div class="money">
+              <span> Rs.249 </span>
+              <p>28 Days-Validity</p>
+            </div>
+            <a [routerLink]="[]" [fragment]="'cat'" class="plan1-button">
+              <button class="plan1-button">Select Plan</button>
+            </a>
+            <div class="plan1-content">
+              <!-- icon  -->
+              <div class="content1">
+                <i class="material-icons">phone_iphone</i>
+                <p>
+                  Unlimited talk, text & data TECH-M may temporarily slow data
+                  speeds if the network is busy.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row2">
+        <div class="plan4">
+          <div class="plan1-content">
+            <div class="title">
+              <span>TECH-M Special Combo Offer </span>
+            </div>
+            <div class="money">
+              <span> Rs.199 </span>
+              <p>21 Days-Validity</p>
+            </div>
+
+            <a [routerLink]="[]" [fragment]="'cat'" class="plan1-button">
+              <button class="plan1-button">Select Plan</button>
+            </a>
+            <div class="plan1-content">
+              <!-- icon  -->
+              <div class="content1">
+                <i class="material-icons">phone_iphone</i>
+                <p>
+                  Limited talk 1rs/min, text & data 5GB ,TECH-M may temporarily
+                  slow data speeds if the network is busy.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="plan4">
+          <div class="plan1-content">
+            <div class="title">
+              <span>TECH-M Basic Data Pack </span>
+            </div>
+            <div class="money">
+              <span> Rs.99 </span>
+              <p>14 Days-Validity</p>
+            </div>
+
+            <a [routerLink]="[]" [fragment]="'cat'" class="plan1-button">
+              <button class="plan1-button">Select Plan</button>
+            </a>
+            <div class="plan1-content">
+              <!-- icon  -->
+              <div class="content1">
+                <i class="material-icons">phone_iphone</i>
+                <p>
+                  Limited talk 1rs/min, text & data 5GB ,TECH-M may temporarily
+                  slow data speeds if the network is busy.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="buttons">
+        <button>More plans</button>
+        <button>Unlimited plans</button>
+      </div>
+      <section id="cat">
+        <div class="container" id="recharge-container">
+          <main>
+            <div class="recharge-container">
+              <h2 id="rechargeTitle">Select Recharge Plan</h2>
+
+              <div *ngIf="subscriber" class="subscriber-info">
+                <i class="fas fa-user"></i>
+                <span
+                  ><strong>{{ subscriber.name }}</strong> ({{
+                    subscriber.mobileNumber
+                  }})</span
+                >
+              </div>
+
+              <form [formGroup]="rechargeForm" (ngSubmit)="onSubmit()">
+                <div class="input-group">
+                  <label for="planId">
+                    <i class="fas fa-list"></i>
+                    Choose a Plan
+                  </label>
+                  <select id="planId" formControlName="planId" required>
+                    <option value="" disabled>Select a plan</option>
+                    <option *ngFor="let plan of plans" [value]="plan.id">
+                      {{ plan.name }} - ₹{{ plan.price }} ({{
+                        plan.validityDays
+                      }}
+                      days)
+                    </option>
+                  </select>
+                  <p
+                    style="color: white"
+                    *ngIf="
+                      rechargeForm.get('planId')?.hasError('required') &&
+                      rechargeForm.get('planId')?.touched
+                    "
+                    class="error-message"
+                  >
+                    Plan is required
+                  </p>
+                </div>
+
+                <div class="input-group">
+                  <label for="paymentMethod">
+                    <i class="fas fa-credit-card"></i>
+                    Payment Method
+                  </label>
+                  <select
+                    id="paymentMethod"
+                    formControlName="paymentMethod"
+                    required
+                  >
+                    <option value="" disabled>Select payment method</option>
+                    <option value="UPI">UPI</option>
+                    <option value="Card">Card</option>
+                  </select>
+                  <p
+                    style="color: white"
+                    *ngIf="
+                      rechargeForm.get('paymentMethod')?.hasError('required') &&
+                      rechargeForm.get('paymentMethod')?.touched
+                    "
+                    class="error-message"
+                  >
+                    Payment method is required
+                  </p>
+                </div>
+
+                <div
+                  *ngIf="rechargeForm.get('paymentMethod')?.value === 'UPI'"
+                  class="input-group"
+                >
+                  <label for="paymentDetails">
+                    <i class="fas fa-qrcode"></i>
+                    UPI ID
+                  </label>
+                  <input
+                    id="paymentDetails"
+                    type="text"
+                    formControlName="paymentDetails"
+                    placeholder="e.g., user@upi"
+                    pattern="[a-zA-Z0-9]+@[a-zA-Z]+"
+                    required
+                  />
+                  <p
+                    *ngIf="
+                      rechargeForm
+                        .get('paymentDetails')
+                        ?.hasError('required') &&
+                      rechargeForm.get('paymentDetails')?.touched
+                    "
+                    class="error-message"
+                  >
+                    UPI ID is required
+                  </p>
+                  <p
+                    *ngIf="
+                      rechargeForm.get('paymentDetails')?.hasError('pattern') &&
+                      rechargeForm.get('paymentDetails')?.touched
+                    "
+                    class="error-message"
+                  >
+                    Invalid UPI ID
+                  </p>
+                </div>
+
+                <div
+                  *ngIf="rechargeForm.get('paymentMethod')?.value === 'Card'"
+                  class="card-details"
+                >
+                  <div class="input-group">
+                    <label for="cardNumber">
+                      <i class="fas fa-credit-card"></i>
+                      Card Number
+                    </label>
+                    <input
+                      id="cardNumber"
+                      type="text"
+                      formControlName="cardNumber"
+                      placeholder="1234-5678-9012-3456"
+                      maxlength="19"
+                      required
+                    />
+                    <p
+                      *ngIf="
+                        rechargeForm.get('cardNumber')?.hasError('required') &&
+                        rechargeForm.get('cardNumber')?.touched
+                      "
+                      class="error-message"
+                    >
+                      Card number is required
+                    </p>
+                    <p
+                      *ngIf="
+                        rechargeForm.get('cardNumber')?.hasError('pattern') &&
+                        rechargeForm.get('cardNumber')?.touched
+                      "
+                      class="error-message"
+                    >
+                      Invalid card number
+                    </p>
+                  </div>
+
+                  <div class="card-row">
+                    <div class="card-field input-group">
+                      <label for="expiry">
+                        <i class="fas fa-calendar"></i>
+                        Expiry (MM/YY)
+                      </label>
+                      <input
+                        id="expiry"
+                        type="text"
+                        formControlName="expiry"
+                        placeholder="MM/YY"
+                        maxlength="5"
+                        required
+                      />
+                      <p
+                        *ngIf="
+                          rechargeForm.get('expiry')?.hasError('required') &&
+                          rechargeForm.get('expiry')?.touched
+                        "
+                        class="error-message"
+                      >
+                        Expiry is required
+                      </p>
+                      <p
+                        *ngIf="
+                          rechargeForm.get('expiry')?.hasError('pattern') &&
+                          rechargeForm.get('expiry')?.touched
+                        "
+                        class="error-message"
+                      >
+                        Invalid expiry date
+                      </p>
+                    </div>
+
+                    <div class="card-field input-group">
+                      <label for="cvv">
+                        <i class="fas fa-lock"></i>
+                        CVV
+                      </label>
+                      <input
+                        id="cvv"
+                        type="text"
+                        formControlName="cvv"
+                        placeholder="123"
+                        maxlength="3"
+                        required
+                      />
+                      <p
+                        *ngIf="
+                          rechargeForm.get('cvv')?.hasError('required') &&
+                          rechargeForm.get('cvv')?.touched
+                        "
+                        class="error-message"
+                      >
+                        CVV is required
+                      </p>
+                      <p
+                        *ngIf="
+                          rechargeForm.get('cvv')?.hasError('pattern') &&
+                          rechargeForm.get('cvv')?.touched
+                        "
+                        class="error-message"
+                      >
+                        Invalid CVV
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <button
+                  type="submit"
+                  class="submit-button"
+                  routerLink="/dummy-payment"
+                  [disabled]="
+                    !isInitialized || !plans.length || rechargeForm.invalid
+                  "
+                >
+                  <i class="fas fa-paper-plane"></i>
+                  Confirm Recharge
+                </button>
+
+                <p *ngIf="errorMessage" class="error-message">
+                  {{ errorMessage }}
+                </p>
+                <p *ngIf="successMessage" class="success-message">
+                  {{ successMessage }}
+                </p>
+              </form>
+            </div>
+          </main>
+
+          <footer>
+            <div class="footer-links">
+              <a href="#">Terms of Service</a>
+              <a href="#">Privacy Policy</a>
+              <a href="#">Help & Support</a>
+            </div>
+            <div class="copyright">
+              <p>&copy; 2023 Mobile Prepaid Recharge. All rights reserved.</p>
+              <p class="version">v1.0.0</p>
+            </div>
+          </footer>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

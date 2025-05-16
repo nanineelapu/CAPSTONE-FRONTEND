@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard - Mobile Prepaid Recharge</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="step">
+      <h1>.03</h1>
+    </div>
+    <nav>
+      <div class="icon" style="gap: 10px; display: flex; align-items: center">
+        <a routerLink="/" style="display: flex; align-items: center; gap: 10px">
+          <i
+            class="fas fa-broadcast-tower"
+            style="font-size: 20px"
+            gap="10px"
+          ></i> </a
+        ><span style="font-size: 2vw"><strong> Tech-M SIM/ESIM</strong> </span>
+      </div>
+
+      <div class="items">
+        <button>
+          <a routerLink="/"><strong> User Recharge </strong></a>
+        </button>
+        <button>
+          <a routerLink="/admin-login"><strong> Logout </strong></a>
+        </button>
+      </div>
+    </nav>
+    <div class="container">
+      <main>
+        <h2
+          style="
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5vw;
+            color: black;
+          "
+        >
+          <i class="fas fa-tachometer-alt" style="margin-right: 0.5vw"></i>
+          Admin Dashboard
+        </h2>
+
+        <div class="dashboard-card animate-slideIn">
+          <div class="card-header">
+            <h3>
+              <i class="fas fa-users"></i>
+              Expiring Subscribers
+            </h3>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table>
+                <thead>
+                  <tr>
+                    <th><i class="fas fa-phone mr-1"></i> Mobile Number</th>
+                    <th><i class="fas fa-user mr-1"></i> Name</th>
+                    <th>
+                      <i class="fas fa-calendar-alt mr-1"></i> Plan Expiry
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    *ngFor="
+                      let subscriber of expiringSubscribers;
+                      let i = index
+                    "
+                  >
+                    <td>{{ subscriber.mobileNumber }}</td>
+                    <td>{{ subscriber.name }}</td>
+                    <td>{{ subscriber.planExpiry | date }}</td>
+                  </tr>
+                  <tr *ngIf="expiringSubscribers.length === 0">
+                    <td colspan="3" style="text-align: center">
+                      No expiring subscribers found
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="dashboard-card animate-slideIn"
+          style="animation-delay: 0.2s"
+        >
+          <div class="card-header">
+            <h3>
+              <i class="fas fa-history"></i>
+              Recharge History
+            </h3>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="historyForm" (ngSubmit)="onHistorySubmit()">
+              <div class="form-group">
+                <label for="mobileNumber">
+                  <i class="fas fa-phone" style="margin-right: 0.5vw"></i>
+                  Mobile Number
+                </label>
+                <input
+                  type="text"
+                  id="mobileNumber"
+                  class="form-control"
+                  formControlName="mobileNumber"
+                  placeholder="Enter 10-digit mobile number"
+                  maxlength="10"
+                />
+                <div
+                  *ngIf="
+                    historyForm.get('mobileNumber')?.hasError('required') &&
+                    historyForm.get('mobileNumber')?.touched
+                  "
+                  class="error-message"
+                >
+                  Mobile number is required
+                </div>
+                <div
+                  *ngIf="
+                    historyForm.get('mobileNumber')?.hasError('pattern') &&
+                    historyForm.get('mobileNumber')?.touched
+                  "
+                  class="error-message"
+                >
+                  Enter a valid 10-digit number
+                </div>
+              </div>
+              <button
+                type="submit"
+                class="btn-search"
+                [disabled]="historyForm.invalid"
+              >
+                <i class="fas fa-search"></i> View History
+              </button>
+            </form>
+
+            <div class="table-responsive" *ngIf="rechargeHistory.length">
+              <table style="margin-top: 2rem">
+                <thead>
+                  <tr>
+                    <th><i class="fas fa-list mr-1"></i> Plan Name</th>
+                    <th><i class="fas fa-rupee-sign mr-1"></i> Amount</th>
+                    <th>
+                      <i class="fas fa-calendar-alt mr-1"></i> Recharge Date
+                    </th>
+                    <th><i class="fas fa-info-circle mr-1"></i> Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let recharge of rechargeHistory; let i = index">
+                    <td>{{ recharge.plan.name }}</td>
+                    <td>₹{{ recharge.amount }}</td>
+                    <td>{{ recharge.rechargeDate | date }}</td>
+                    <td>{{ recharge.status }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div
+              *ngIf="errorMessage"
+              class="error-message"
+              style="text-align: center; margin-top: 1rem"
+            >
+              {{ errorMessage }}
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="footer-links">
+          <a href="#">Terms of Service</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Help & Support</a>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2023 Mobile Prepaid Recharge. All rights reserved.</p>
+          <p class="version">v1.0.0</p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>

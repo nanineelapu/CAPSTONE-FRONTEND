@@ -1,0 +1,309 @@
+/* ---------- GLOBAL STYLES ---------- */
+:root {
+    --primary-color: #4a6bff;
+    --secondary-color: rgba(255, 255, 255, 0.1);
+    --text-color: white;
+    --border-color: white;
+    --error-color: #ff6b6b;
+    --success-color: #4eff91;
+    --shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-image: url(https://cdn.prod.website-files.com/67d94a83b4dcb2e406b897dc/67dfe09331ad3adc06291810_Hero%20Section%20V2%20Bg.jpg);
+    background-position: 50% 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--text-color);
+}
+
+/* ---------- PAYMENT CONTAINER ---------- */
+.payment-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- PAYMENT CARD ---------- */
+.payment-card {
+    width: 100%;
+    max-width: 500px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+/* ---------- PAYMENT HEADER ---------- */
+.payment-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.payment-header h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.payment-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.payment-logo i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* ---------- PAYMENT DETAILS ---------- */
+.payment-details {
+    padding: 1.5rem;
+    background-color: var(--secondary-color);
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+.detail-row:last-child {
+    margin-bottom: 0;
+}
+
+.label {
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.value {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.payment-divider {
+    height: 1px;
+    background-color: var(--border-color);
+    opacity: 0.2;
+    margin: 0 1.5rem;
+}
+
+/* ---------- OTP SECTION ---------- */
+.otp-section {
+    padding: 1.5rem;
+}
+
+.otp-info {
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-color);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.otp-info i {
+    color: var(--primary-color);
+    margin-top: 0.2rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1.2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: transparent;
+    color: var(--text-color);
+    letter-spacing: 0.2rem;
+    text-align: center;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+/* ---------- BUTTON GROUP ---------- */
+.button-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.cancel-btn,
+.submit-btn {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.cancel-btn {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.submit-btn {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.cancel-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.submit-btn:hover {
+    background-color: white;
+    color: black;
+}
+
+.submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ---------- SUCCESS SECTION ---------- */
+.success-section {
+    padding: 2rem 1.5rem;
+    text-align: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.success-icon {
+    font-size: 4rem;
+    color: var(--success-color);
+    margin-bottom: 1rem;
+}
+
+.success-message {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.countdown {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+/* ---------- ERROR SECTION ---------- */
+.error-section {
+    padding: 1.5rem;
+    text-align: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.error-icon {
+    font-size: 3rem;
+    color: var(--error-color);
+    margin-bottom: 1rem;
+}
+
+.error-message {
+    font-size: 1.1rem;
+    color: var(--error-color);
+}
+
+/* ---------- SECURE INFO ---------- */
+.secure-info {
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-color);
+    opacity: 0.7;
+    border-top: 1px solid var(--border-color);
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.secure-info i {
+    color: var(--success-color);
+}
+
+/* ---------- RESPONSIVE STYLES ---------- */
+@media (max-width: 576px) {
+    .payment-container {
+        padding: 1rem;
+    }
+
+    .payment-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .detail-row {
+        font-size: 0.9rem;
+    }
+}
+
+/* Fix for placeholder text color */
+::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}

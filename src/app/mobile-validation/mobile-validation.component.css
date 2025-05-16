@@ -1,0 +1,396 @@
+/* ----------  CSS VARIABLES  ---------- */
+:root {
+    --primary-color: #4a6bff;
+    --secondary-color: #f5f7ff;
+    --text-color: #333;
+    --light-text: #777;
+    --error-color: #e74c3c;
+    --border-color: #ddd;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ----------  GLOBAL RESET  ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-image: url(https://cdn.prod.website-files.com/67d94a83b4dcb2e406b897dc/67dfe09331ad3adc06291810_Hero%20Section%20V2%20Bg.jpg);
+    background-position: 50% 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+body {
+    display: flex;
+    /* centres the page vertically if wanted */
+    flex-direction: column;
+    align-items: center;
+    background: var(--secondary-color);
+    color: var(--text-color);
+}
+
+/* Page animation */
+body {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.step {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    color: black;
+    font-size: 2rem;
+    z-index: 1;
+    /* or any positive value */
+    pointer-events: none;
+}
+
+
+.step h1 {
+    font-family: "Funnel Display", sans-serif;
+    font-size: 12vw;
+    padding: 4vw 0vw;
+}
+
+/* ----------  NAVBAR  ---------- */
+nav {
+    width: 100%;
+    margin: 0;
+    height: 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 0vw 0vw;
+    padding: 4vw 2vw;
+    background: transparent;
+    color: #111;
+}
+
+button {
+    border: 2px solid black;
+    padding: .5vw 1vw;
+    border-radius: 40px;
+    background: transparent;
+    color: black;
+    cursor: pointer;
+    font-size: 1.2vw;
+    transition: all 0.4s ease;
+}
+
+button:hover {
+    background: black;
+    color: white;
+}
+
+.login-container h2 {
+    font-size: 2vw;
+}
+
+.items {
+    display: flex;
+    gap: 1vw;
+}
+
+nav a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ----------  LAYOUT WRAPPER  ---------- */
+/* Animation for fade-in from bottom */
+@keyframes fadeInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    animation: fadeInFromBottom 0.6s ease-out forwards;
+}
+
+/* ----------  LOGIN CARD  ---------- */
+.login-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: transparent;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+/* .login-container loginTitle {} */
+
+.login-container h2 {
+    font-family: 'Funnel Display', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: black;
+    font-size: 3vw;
+}
+
+/* ----------  FORM ELEMENTS  ---------- */
+.input-group {
+    position: relative;
+    margin-bottom: 1.25rem;
+}
+
+.input-group label {
+    font-size: 1.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.validate-button {
+    background-color: black;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0vw 11vw;
+    padding: .5vw 0vw;
+    background-color: transparent;
+    border: 2px solid black;
+    color: black;
+    font-size: 1.2vw;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.validate-button:hover {
+    background-color: black;
+    color: white;
+}
+
+.error-message {
+    color: red;
+    font-size: 1vw;
+}
+
+.input-group input {
+    width: 60%;
+    padding: 1vw 3vw;
+    margin: 0vw 9vw;
+    /* border: 1px solid var(--border-color); */
+    border-radius: 5px;
+    font-size: 1.5vw;
+    transition: border 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    background-color: transparent;
+
+}
+
+.input-group input:focus {
+    /* border-color: var(--primary-color); */
+    outline: none;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.input-group i {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: var(--light-text);
+}
+
+/* ----------  ERROR MESSAGE  ---------- */
+/* For error messages animation */
+@keyframes pulse {
+    0% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.6;
+    }
+}
+
+.error-message {
+    animation: pulse 1.5s infinite;
+}
+
+/* ----------  SOCIAL LOGIN  ---------- */
+.social-login {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.social-login p {
+    margin-bottom: 1rem;
+    color: var(--light-text);
+    position: relative;
+}
+
+.social-login p::before,
+.social-login p::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 1px;
+    background: var(--border-color);
+}
+
+.social-login p::before {
+    left: 0;
+}
+
+.social-login p::after {
+    right: 0;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 0.9rem;
+}
+
+.social-icons a {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f5f5f5;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.social-icons a:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+/* ----------  SIGN-UP FOOTER LINK  ---------- */
+.signup-link {
+    margin-top: 1.25rem;
+    text-align: center;
+    color: white;
+}
+
+.signup-link a {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* ----------  PAGE FOOTER  ---------- */
+footer {
+    margin: 2.5rem 0 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--light-text);
+}
+
+.footer-links {
+    margin-bottom: 0.75rem;
+    color: white;
+}
+
+.footer-links a {
+    margin: 0 0.6rem;
+    color: white;
+    text-decoration: none;
+}
+
+.copyright {
+    color: white;
+}
+
+.version {
+    font-size: 0.65rem;
+}
+
+/* ----------  RESPONSIVE TWEAKS  ---------- */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 1.5rem;
+    }
+
+    .social-login p::before,
+    .social-login p::after {
+        width: 25%;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .social-login p::before,
+    .social-login p::after {
+        width: 20%;
+    }
+}
+
+@keyframes fadeFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.step h1 {
+    font-family: "Funnel Display", sans-serif;
+    font-size: 11vw;
+    padding: 2vw 4vw;
+    animation: fadeFromBottom .5s ease-out;
+}
