@@ -99,7 +99,7 @@ export class ApiService {
   getRechargeHistory(mobileNumber: string): Observable<Recharge[]> {
     return this.http
       .get<Recharge[]>(
-        `${this.apiUrl}/api/subscribers/${mobileNumber}/history`,
+        `${this.apiUrl}/api/admin/subscribers/${mobileNumber}/history`,
         { headers: this.getHeaders() }
       )
       .pipe(catchError(this.handleError));
