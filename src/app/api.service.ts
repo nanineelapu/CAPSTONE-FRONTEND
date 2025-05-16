@@ -80,7 +80,7 @@ export class ApiService {
       .get<Plan[]>(`${this.apiUrl}/api/user/plans`)
       .pipe(catchError(this.handleError));
   }
-
+  //Everythung must fine
   recharge(request: RechargeRequest): Observable<RechargeResponse> {
     return this.http
       .post<RechargeResponse>(`${this.apiUrl}/api/user/recharge`, request, {

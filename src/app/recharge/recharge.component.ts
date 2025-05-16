@@ -96,7 +96,10 @@ export class RechargeComponent implements OnInit, AfterViewInit {
           console.log('Recharge response:', response);
           this.successMessage = `Recharge successful! Transaction ID: ${response.transactionId}`;
           this.cdr.detectChanges();
-          setTimeout(() => this.router.navigate(['/dummy-payment']), 3000);
+          setTimeout(
+            () => this.router.navigate(['https://www.google.com']),
+            3000
+          );
         },
         error: (err) => {
           console.error('API Error:', err); // Log the full error
