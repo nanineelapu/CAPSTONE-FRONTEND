@@ -71,7 +71,7 @@ export class ApiService {
 
   validateMobile(request: MobileValidationRequest): Observable<Subscriber> {
     return this.http
-      .post<Subscriber>(`${this.apiUrl}/auth/validate-mobile`, request)
+      .post<Subscriber>(`${this.apiUrl}/api/auth/validate-mobile`, request)
       .pipe(catchError(this.handleError));
   }
 
