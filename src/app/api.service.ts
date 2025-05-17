@@ -105,13 +105,6 @@ export class ApiService {
       )
       .pipe(catchError(this.handleError));
   }
-  getRechargeById(id: number): Observable<Recharge> {
-    return this.http
-      .get<Recharge>(`${this.apiUrl}/api/user/recharges/${id}`, {
-        headers: this.getHeaders(),
-      })
-      .pipe(catchError(this.handleError));
-  }
 
   private handleError(error: HttpErrorResponse): Observable<never> {
     let errorMessage = 'An error occurred';
