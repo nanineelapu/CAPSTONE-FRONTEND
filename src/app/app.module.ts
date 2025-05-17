@@ -10,8 +10,6 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { MobileValidationComponent } from './mobile-validation/mobile-validation.component';
 import { RechargeComponent } from './recharge/recharge.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
-import { DummyPaymentComponent } from './dummy-payment/dummy-payment.component';
-import { SucessComponent } from './sucess/sucess.component';
 import { SuccessComponent } from './success/success.component';
 
 @NgModule({
@@ -21,8 +19,6 @@ import { SuccessComponent } from './success/success.component';
     MobileValidationComponent,
     RechargeComponent,
     AdminDashboardComponent,
-    DummyPaymentComponent,
-    SucessComponent,
     SuccessComponent,
   ],
   imports: [
