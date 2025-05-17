@@ -11,6 +11,8 @@ import { MobileValidationComponent } from './mobile-validation/mobile-validation
 import { RechargeComponent } from './recharge/recharge.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { DummyPaymentComponent } from './dummy-payment/dummy-payment.component';
+import { SucessComponent } from './sucess/sucess.component';
+import { SuccessComponent } from './success/success.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { DummyPaymentComponent } from './dummy-payment/dummy-payment.component';
     RechargeComponent,
     AdminDashboardComponent,
     DummyPaymentComponent,
+    SucessComponent,
+    SuccessComponent,
   ],
   imports: [
     BrowserModule,

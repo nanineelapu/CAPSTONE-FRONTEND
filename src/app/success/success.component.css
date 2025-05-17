@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.payment-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+.payment-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.payment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.payment-header h2 {
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.payment-logo {
+    display: flex;
+    align-items: center;
+    color: #4a6cf7;
+    font-weight: 600;
+}
+
+.payment-logo i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+.payment-details {
+    margin-bottom: 25px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.label {
+    color: #666;
+    font-weight: 500;
+}
+
+.value {
+    color: #333;
+    font-weight: 600;
+}
+
+.payment-divider {
+    height: 1px;
+    background-color: #e9ecef;
+    margin: 20px 0;
+}
+
+.success-section {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.success-icon {
+    font-size: 4rem;
+    color: #28a745;
+    margin-bottom: 20px;
+}
+
+.success-message {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.transaction-details {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.transaction-details p {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.email-sent {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.countdown {
+    color: #888;
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
+
+.secure-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6c757d;
+    font-size: 0.85rem;
+    margin-top: 25px;
+}
+
+.secure-info i {
+    margin-right: 8px;
+}
+
+.home-btn {
+    background-color: #4a6cf7;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+}
+
+.home-btn:hover {
+    background-color: #3a5bd9;
+}
+
+@media (max-width: 576px) {
+    .payment-container {
+        padding: 10px;
+    }
+
+    .payment-card {
+        padding: 20px;
+    }
+
+    .payment-header h2 {
+        font-size: 1.3rem;
+    }
+}

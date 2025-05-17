@@ -40,7 +40,7 @@ export class ApiService {
   }
 
   private getHeaders(): HttpHeaders {
-    let headers = new HttpHeaders();
+    let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     const token = this.getToken();
     if (token) {
       headers = headers.set('Authorization', `Bearer ${token}`);
@@ -85,6 +85,7 @@ export class ApiService {
     return this.http
       .post<RechargeResponse>(`${this.apiUrl}/api/user/recharges`, request, {
         headers: this.getHeaders(),
+        responseType: 'json',
       })
       .pipe(catchError(this.handleError));
   }
@@ -102,6 +103,13 @@ export class ApiService {
         `${this.apiUrl}/api/admin/subscribers/${mobileNumber}/history`,
         { headers: this.getHeaders() }
       )
+      .pipe(catchError(this.handleError));
+  }
+  getRechargeById(id: number): Observable<Recharge> {
+    return this.http
+      .get<Recharge>(`${this.apiUrl}/api/user/recharges/${id}`, {
+        headers: this.getHeaders(),
+      })
       .pipe(catchError(this.handleError));
   }
 

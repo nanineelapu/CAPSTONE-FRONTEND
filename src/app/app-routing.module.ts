@@ -4,14 +4,14 @@ import { MobileValidationComponent } from './mobile-validation/mobile-validation
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { RechargeComponent } from './recharge/recharge.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
-import { DummyPaymentComponent } from './dummy-payment/dummy-payment.component';
+import { SuccessComponent } from './success/success.component';
 
 const routes: Routes = [
   { path: '', component: MobileValidationComponent },
   { path: 'admin-login', component: AdminLoginComponent },
   { path: 'recharge', component: RechargeComponent },
   { path: 'admin-dashboard', component: AdminDashboardComponent },
-  { path: 'dummy-payment', component: DummyPaymentComponent },
+  { path: 'sucess', component: SuccessComponent },
   { path: '**', redirectTo: '' },
 ];
 const routerOptions: ExtraOptions = {

@@ -1,0 +1,32 @@
+<div *ngIf="recharge" class="payment-container">
+  <div class="payment-card">
+    <!-- ... header and logo ... -->
+
+    <div class="payment-details">
+      <div class="detail-row">
+        <span class="label">Mobile Number:</span>
+        <span class="value">{{ recharge?.mobileNumber }}</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Plan Amount:</span>
+        <span class="value">₹{{ recharge?.amount }}</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Payment Method:</span>
+        <span class="value">{{ recharge?.paymentMethod }}</span>
+      </div>
+    </div>
+
+    <!-- rest of your markup -->
+
+    <p class="transaction-details">
+      <strong>Transaction ID:</strong> {{ recharge?.id }}
+    </p>
+    <p>
+      <strong>Date & Time:</strong>
+      {{ recharge?.rechargeDate }}
+    </p>
+
+    <!-- countdown, buttons, etc. -->
+  </div>
+</div>
