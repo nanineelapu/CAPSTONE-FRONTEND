@@ -83,7 +83,7 @@ export class ApiService {
   //Everythung must fine
   recharge(request: RechargeRequest): Observable<RechargeResponse> {
     return this.http
-      .post<RechargeResponse>(`${this.apiUrl}/api/user/recharge`, request, {
+      .post<RechargeResponse>(`${this.apiUrl}/api/recharge`, request, {
         headers: this.getHeaders(),
       })
       .pipe(catchError(this.handleError));
