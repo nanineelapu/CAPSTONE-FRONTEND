@@ -4,117 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Payment Success - Dark Theme Unique Checkmark</title>
-    <style>
-      body {
-        background: #121212;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        color: #eee;
-      }
-
-      .container {
-        background: #1e1e1e;
-        padding: 40px 60px;
-        border-radius: 12px;
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
-        text-align: center;
-        max-width: 400px;
-        width: 90%;
-      }
-
-      .checkmark-svg {
-        width: 100px;
-        height: 100px;
-        margin: 0 auto 20px;
-        display: block;
-        stroke: #4bb543;
-        stroke-width: 6;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        fill: none;
-        animation: strokeCircle 2s ease infinite;
-      }
-
-      .checkmark-circle {
-        stroke-dasharray: 314; /* circumference of circle with r=50 */
-        stroke-dashoffset: 314;
-        animation: dashCircle 2s ease infinite;
-      }
-
-      .checkmark-check {
-        stroke-dasharray: 70; /* length of the check path */
-        stroke-dashoffset: 70;
-        animation: dashCheck 2s ease infinite;
-      }
-
-      @keyframes dashCircle {
-        0%,
-        100% {
-          stroke-dashoffset: 314;
-        }
-        25%,
-        90% {
-          stroke-dashoffset: 0;
-        }
-      }
-
-      @keyframes dashCheck {
-        0%,
-        30% {
-          stroke-dashoffset: 70;
-        }
-        50%,
-        90% {
-          stroke-dashoffset: 0;
-        }
-        100% {
-          stroke-dashoffset: 70;
-        }
-      }
-
-      h1 {
-        margin-bottom: 10px;
-        font-weight: 700;
-        color: #4bb543;
-      }
-
-      p {
-        font-size: 1rem;
-        margin: 6px 0;
-        color: #ccc;
-      }
-
-      .transaction-id {
-        margin-top: 20px;
-        font-weight: 600;
-        color: #aaa;
-        font-family: monospace;
-      }
-
-      .btn-home {
-        margin-top: 30px;
-        background: #4bb543;
-        color: #121212;
-        border: none;
-        padding: 12px 28px;
-        border-radius: 30px;
-        cursor: pointer;
-        font-weight: 600;
-        font-size: 1rem;
-        transition: background-color 0.3s ease;
-        box-shadow: 0 4px 10px #4bb543bb;
-      }
-
-      .btn-home:hover {
-        background-color: #3a9e34;
-        box-shadow: 0 6px 14px #3a9e3499;
-      }
-    </style>
+    <style></style>
   </head>
   <body>
     <div class="container">
@@ -141,7 +31,7 @@
 
       <h1>Payment Successful!</h1>
       <p>Your payment was completed successfully.</p>
-      <p class="transaction-id">Transaction ID: TXN123456789</p>
+      <p class="transaction-id">Transaction ID: {{ transactionId }}</p>
       <button class="btn-home" onclick="location.href='index.html'">
         Back to Home
       </button>

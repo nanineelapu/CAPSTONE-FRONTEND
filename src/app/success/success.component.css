@@ -1,107 +1,116 @@
-    body {
-        background: #f0f9ff;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        color: #333;
+body {
+    background: #121212;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #eee;
+}
+
+.container {
+    background: #1e1e1e;
+    padding: 40px 60px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.checkmark-svg {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    display: block;
+    stroke: #4bb543;
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    animation: strokeCircle 2s ease infinite;
+}
+
+.checkmark-circle {
+    stroke-dasharray: 314;
+    /* circumference of circle with r=50 */
+    stroke-dashoffset: 314;
+    animation: dashCircle 2s ease infinite;
+}
+
+.checkmark-check {
+    stroke-dasharray: 70;
+    /* length of the check path */
+    stroke-dashoffset: 70;
+    animation: dashCheck 2s ease infinite;
+}
+
+@keyframes dashCircle {
+
+    0%,
+    100% {
+        stroke-dashoffset: 314;
     }
 
-    .container {
-        background: white;
-        padding: 40px 60px;
-        border-radius: 12px;
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        max-width: 400px;
-        width: 90%;
+    25%,
+    90% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes dashCheck {
+
+    0%,
+    30% {
+        stroke-dashoffset: 70;
     }
 
-    .checkmark {
-        width: 80px;
-        height: 80px;
-        margin: 0 auto 20px;
-        border-radius: 50%;
-        background: #4BB543;
-        position: relative;
-        animation: popIn 0.5s ease forwards;
+    50%,
+    90% {
+        stroke-dashoffset: 0;
     }
 
-    .checkmark::before {
-        content: '';
-        position: absolute;
-        left: 22px;
-        top: 37px;
-        width: 12px;
-        height: 24px;
-        border-right: 4px solid white;
-        border-bottom: 4px solid white;
-        transform: rotate(45deg);
-        animation: drawCheck 0.4s ease forwards;
-        animation-delay: 0.5s;
-        opacity: 0;
+    100% {
+        stroke-dashoffset: 70;
     }
+}
 
-    @keyframes popIn {
-        0% {
-            transform: scale(0);
-            opacity: 0;
-        }
+h1 {
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: #4bb543;
+}
 
-        100% {
-            transform: scale(1);
-            opacity: 1;
-        }
-    }
+p {
+    font-size: 1rem;
+    margin: 6px 0;
+    color: #ccc;
+}
 
-    @keyframes drawCheck {
-        0% {
-            width: 0;
-            height: 0;
-            opacity: 1;
-        }
+.transaction-id {
+    margin-top: 20px;
+    font-weight: 600;
+    color: #aaa;
+    font-family: monospace;
+}
 
-        100% {
-            width: 12px;
-            height: 24px;
-            opacity: 1;
-        }
-    }
+.btn-home {
+    margin-top: 30px;
+    background: #4bb543;
+    color: #121212;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 10px #4bb543bb;
+}
 
-    h1 {
-        margin-bottom: 10px;
-        font-weight: 700;
-        color: #2a7ae2;
-    }
-
-    p {
-        font-size: 1rem;
-        margin: 6px 0;
-    }
-
-    .transaction-id {
-        margin-top: 20px;
-        font-weight: 600;
-        color: #555;
-        font-family: monospace;
-    }
-
-    .btn-home {
-        margin-top: 30px;
-        background: #2a7ae2;
-        color: white;
-        border: none;
-        padding: 12px 28px;
-        border-radius: 30px;
-        cursor: pointer;
-        font-weight: 600;
-        font-size: 1rem;
-        transition: background-color 0.3s ease;
-    }
-
-    .btn-home:hover {
-        background-color: #1a5cc1;
-    }
+.btn-home:hover {
+    background-color: #3a9e34;
+    box-shadow: 0 6px 14px #3a9e3499;
+}
