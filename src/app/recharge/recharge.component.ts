@@ -98,12 +98,6 @@ export class RechargeComponent implements OnInit, AfterViewInit {
           this.cdr.detectChanges();
           setTimeout(() => this.router.navigate(['/sucess']), 3000);
         },
-        error: (err) => {
-          console.error('API Error:', err); // Log the full error
-          this.errorMessage =
-            err.message || 'Recharge failed. Please try again.';
-          this.cdr.detectChanges();
-        },
       });
     }
   }
