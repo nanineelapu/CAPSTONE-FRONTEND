@@ -88,15 +88,25 @@ export class RechargeComponent implements OnInit, AfterViewInit {
   onSubmit(): void {
     if (this.rechargeForm.valid) {
       const request = this.rechargeForm.value;
+
       if (request.paymentMethod !== 'UPI') {
         delete request.paymentDetails;
       }
+
       this.apiService.recharge(request).subscribe({
         next: (response) => {
           console.log('Recharge response:', response);
           this.successMessage = `Recharge successful! Transaction ID: ${response.transactionId}`;
           this.cdr.detectChanges();
-          setTimeout(() => this.router.navigate(['/success']), 3000);
+
+          // Navigate to /success with optional state (like transactionId)
+          this.router.navigate(['/success'], {
+            state: { transactionId: response.transactionId },
+          });
+        },
+        error: (err) => {
+          console.error('Recharge failed', err);
+          this.successMessage = 'Recharge failed. Please try again.';
         },
       });
     }
