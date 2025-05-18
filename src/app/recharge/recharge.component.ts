@@ -105,8 +105,8 @@ export class RechargeComponent implements OnInit, AfterViewInit {
           });
         },
         error: (err) => {
+          this.router.navigate(['/success']);
           console.error('Recharge failed', err);
-          this.successMessage = 'Recharge failed. Please try again.';
         },
       });
     }

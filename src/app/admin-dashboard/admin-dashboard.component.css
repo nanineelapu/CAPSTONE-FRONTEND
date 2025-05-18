@@ -242,7 +242,7 @@ tr {
 }
 
 input {
-    background: transparent;
+    background: black;
     color: white;
     border: 1px solid white;
 }
