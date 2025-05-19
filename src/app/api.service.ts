@@ -29,13 +29,13 @@ export class ApiService {
     this.token = localStorage.getItem('token');
   }
   register(userData: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/users/register`, userData);
+    return this.http.post(`${this.apiUrl}/api/user/register`, userData);
   }
   login(credentials: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/users/login`, credentials);
+    return this.http.post(`${this.apiUrl}/api/user/login`, credentials);
   }
   validateRegisteredMobilenumber(mobileNumber: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/users/validate-mobile`, {
+    return this.http.post(`${this.apiUrl}/api/user/validate-mobile`, {
       mobileNumber,
     });
   }
