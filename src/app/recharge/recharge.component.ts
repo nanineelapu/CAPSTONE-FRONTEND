@@ -100,7 +100,7 @@ export class RechargeComponent implements OnInit, AfterViewInit {
           this.cdr.detectChanges();
 
           // Navigate to /success with optional state (like transactionId)
-          this.router.navigate(['/sucess'], {
+          this.router.navigate(['/success'], {
             state: { transactionId: response.transactionId },
           });
         },
