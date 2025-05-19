@@ -27,11 +27,9 @@ export class UserRegisterComponent {
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
-
   onSubmit(): void {
-    if (this.registerForm.invalid) {
-      return;
-    }
+    if (!this.registerForm) return; // Defensive check
+    if (this.registerForm.invalid) return;
 
     this.loading = true;
     this.errorMessage = '';
@@ -46,7 +44,7 @@ export class UserRegisterComponent {
       error: (error) => {
         this.loading = false;
         this.errorMessage =
-          error.error || 'Registration failed. Please try again.';
+          error?.error?.message || 'Registration failed. Please try again.';
       },
     });
   }
