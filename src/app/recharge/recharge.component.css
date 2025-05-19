@@ -144,7 +144,7 @@ button {
     background-color: transparent;
     margin: 2vw;
     border-radius: 20px;
-    border: 1px solid white;
+    border: 3px solid white;
     color: white;
 }
 
@@ -152,7 +152,7 @@ button {
     width: 30%;
     height: 20vw;
     background-color: transparent;
-    border: 1px solid white;
+    border: 3px solid white;
     margin: 2vw;
     border-radius: 20px;
     color: white;
@@ -162,7 +162,7 @@ button {
     width: 30%;
     height: 20vw;
     background-color: transparent;
-    border: 1px solid white;
+    border: 3px solid white;
     margin: 2vw;
     padding: 2vw 0vw;
     border-radius: 20px;
@@ -173,7 +173,7 @@ button {
     width: 30%;
     height: 20vw;
     background-color: transparent;
-    border: 1px solid white;
+    border: 3px solid white;
     margin: 2vw;
     padding: 2vw 0vw;
     border-radius: 20px;
@@ -185,6 +185,9 @@ button {
     display: flex;
     height: 20vw;
     background-color: transparent;
+
+    border: 3px solid white;
+
     margin: 4vw;
     color: white;
 }
@@ -250,7 +253,7 @@ button {
 .plan1-button button {
     padding: .5vw 1vw;
     border-radius: 1vw;
-    border: 1px solid white;
+    border: 2px solid white;
     background-color: transparent;
     cursor: pointer;
     transition: background-color 0.5s;
@@ -585,8 +588,8 @@ footer {
     .plans {
         display: flex;
         flex-direction: column;
-        gap: 2vw;
-        padding: 0 1vw;
+        gap: 3vw;
+        padding: 1vw 1vw;
     }
 
     .plan1,
@@ -597,7 +600,9 @@ footer {
         height: auto;
         margin: 1vw 0;
         padding: 2vw 1vw;
+        border: 3px solid white;
         box-sizing: border-box;
+
     }
 
     .plan1-content {
@@ -670,6 +675,7 @@ footer {
         flex-direction: column;
         gap: 2vw;
         margin-top: 3vw;
+        border: 2px solid white;
         font-size: 4vw;
         padding: 0 2vw;
     }
@@ -678,6 +684,7 @@ footer {
         width: 100%;
         padding: 2vw 0;
         border-radius: 15px;
+        border: 2px solid white;
         font-weight: 700;
     }
 
