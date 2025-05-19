@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'admin-login', component: AdminLoginComponent },
   { path: 'recharge', component: RechargeComponent },
   { path: 'admin-dashboard', component: AdminDashboardComponent },
-  { path: 'sucess', component: SuccessComponent },
+  { path: 'success', component: SuccessComponent },
   { path: '**', redirectTo: '' },
 ];
 const routerOptions: ExtraOptions = {
