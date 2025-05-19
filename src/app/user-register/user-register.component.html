@@ -1,3 +1,5 @@
+<!-----------Add username form also-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,17 +25,43 @@
             (ngSubmit)="onSubmit()"
             method="post"
           >
+            <!-- Username Field -->
+            <div class="input-group">
+              <i class="fas fa-user"></i>
+              <input
+                type="text"
+                id="username"
+                formControlName="username"
+                placeholder="Username"
+                required
+              />
+            </div>
+
+            <!-- Email Field -->
+            <div class="input-group">
+              <i class="fas fa-envelope"></i>
+              <input
+                type="email"
+                id="email"
+                formControlName="email"
+                placeholder="Email"
+                required
+              />
+            </div>
+
+            <!-- Mobile Number -->
             <div class="input-group">
               <i class="fas fa-phone"></i>
               <input
                 type="text"
                 id="phonenumber"
-                formControlName="phonenumber"
+                formControlName="mobileNumber"
                 placeholder="+91 Phone Number"
                 required
               />
             </div>
 
+            <!-- Password -->
             <div class="input-group">
               <i class="fas fa-lock"></i>
               <input
@@ -47,6 +75,7 @@
               <div class="validation-message" id="passwordValidation"></div>
             </div>
 
+            <!-- Confirm Password -->
             <div class="input-group">
               <i class="fas fa-lock"></i>
               <input
@@ -62,6 +91,7 @@
               ></div>
             </div>
 
+            <!-- Remember Me & Forgot Password -->
             <div class="form-options">
               <div class="remember-me">
                 <input type="checkbox" id="rememberMe" />
@@ -70,6 +100,7 @@
               <a href="#" class="forgot-password">Forgot Password?</a>
             </div>
 
+            <!-- Register Button -->
             <button type="submit" class="register-btn" id="RegisterButton">
               <span>Register</span>
               <div class="loader" id="RegisterLoader"></div>

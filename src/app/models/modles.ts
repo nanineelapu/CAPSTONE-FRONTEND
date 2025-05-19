@@ -1,3 +1,10 @@
+export interface User {
+  id: number;
+  mobileNumber: string;
+  email: string;
+  password?: string; // Optional as you typically don't return password
+}
+
 export interface Admin {
   id: number;
   username: string;
@@ -55,4 +62,17 @@ export interface RechargeRequest {
 
 export interface RechargeResponse {
   transactionId: string;
+}
+export interface UserLoginResponse {
+  token: string;
+  mobileNumber: string;
+}
+export interface UserLoginRequest {
+  mobileNumber: string; // Changed from Long to string for frontend use
+  password: string;
+}
+export interface UserRegistrationRequest {
+  mobileNumber: string;
+  email: string;
+  password: string;
 }
