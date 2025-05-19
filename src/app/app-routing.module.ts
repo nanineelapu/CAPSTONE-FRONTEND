@@ -6,9 +6,10 @@ import { RechargeComponent } from './recharge/recharge.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { SuccessComponent } from './success/success.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
+import { UserLoginComponent } from './user-login/user-login.component';
 
 const routes: Routes = [
-  { path: '', component: UserRegisterComponent },
+  { path: '', component: UserLoginComponent },
   { path: 'admin-login', component: AdminLoginComponent },
   { path: 'recharge', component: RechargeComponent },
   { path: 'admin-dashboard', component: AdminDashboardComponent },

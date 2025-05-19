@@ -16,6 +16,12 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
 body {
     background-color: var(--secondary-color);
     color: var(--text-color);
@@ -27,6 +33,8 @@ body {
 .container {
     width: 100%;
     max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 /* Header Styles */
@@ -121,8 +129,8 @@ input:checked+.slider:before {
     border: 1px solid var(--border-color);
 }
 
-/* Main register Container */
-.register-container {
+/* Main Login Container */
+.login-container {
     background-color: white;
     border-radius: 10px;
     box-shadow: var(--shadow);
@@ -201,12 +209,12 @@ h2 {
     font-size: 14px;
 }
 
-.register-btn {
+.login-btn {
     width: 100%;
     padding: 15px;
     background-color: var(--primary-color);
     color: black;
-    border: 1px solid black;
+    border: none;
     border-radius: 5px;
     font-size: 16px;
     font-weight: 600;
@@ -215,9 +223,9 @@ h2 {
     position: relative;
 }
 
-.register-btn:hover {
-    background-color: black;
+.login-btn:hover {
     color: white;
+    background-color: black;
 }
 
 /* Loader */
@@ -252,20 +260,20 @@ h2 {
     display: none;
 }
 
-/* Social register */
-.social-register {
+/* Social Login */
+.social-login {
     margin-top: 30px;
     text-align: center;
 }
 
-.social-register p {
+.social-login p {
     color: var(--light-text);
     margin-bottom: 15px;
     position: relative;
 }
 
-.social-register p::before,
-.social-register p::after {
+.social-login p::before,
+.social-login p::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -274,11 +282,11 @@ h2 {
     background-color: var(--border-color);
 }
 
-.social-register p::before {
+.social-login p::before {
     left: 0;
 }
 
-.social-register p::after {
+.social-login p::after {
     right: 0;
 }
 
@@ -359,7 +367,7 @@ footer {
         padding: 15px;
     }
 
-    .register-container {
+    .login-container {
         padding: 20px;
     }
 
@@ -367,8 +375,8 @@ footer {
         font-size: 20px;
     }
 
-    .social-register p::before,
-    .social-register p::after {
+    .social-login p::before,
+    .social-login p::after {
         width: 25%;
     }
 }
@@ -383,8 +391,8 @@ footer {
         margin-top: 10px;
     }
 
-    .social-register p::before,
-    .social-register p::after {
+    .social-login p::before,
+    .social-login p::after {
         width: 20%;
     }
 }
