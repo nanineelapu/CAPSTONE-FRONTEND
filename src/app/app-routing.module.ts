@@ -5,13 +5,15 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { RechargeComponent } from './recharge/recharge.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { SuccessComponent } from './success/success.component';
+import { UserRegisterComponent } from './user-register/user-register.component';
 
 const routes: Routes = [
-  { path: '', component: MobileValidationComponent },
+  { path: '', component: UserRegisterComponent },
   { path: 'admin-login', component: AdminLoginComponent },
   { path: 'recharge', component: RechargeComponent },
   { path: 'admin-dashboard', component: AdminDashboardComponent },
   { path: 'success', component: SuccessComponent },
+  { path: 'register', component: UserRegisterComponent },
   { path: '**', redirectTo: '' },
 ];
 const routerOptions: ExtraOptions = {

@@ -28,7 +28,26 @@ export class ApiService {
     // Load token from localStorage on initialization
     this.token = localStorage.getItem('token');
   }
+  register(userData: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/users/register`, userData);
+  }
+  login(credentials: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/users/login`, credentials);
+  }
+  validateRegisteredMobilenumber(mobileNumber: string): Observable<any> {
+    return this.http.post(`${this.apiUrl}/users/validate-mobile`, {
+      mobileNumber,
+    });
+  }
+  // Store user token in localStorage
+  storeUserToken(token: string): void {
+    localStorage.setItem('userToken', token);
+  }
 
+  // Get user token from localStorage
+  getUserToken(): string | null {
+    return localStorage.getItem('userToken');
+  }
   setToken(token: string): void {
     this.token = token;
     localStorage.setItem('token', token);

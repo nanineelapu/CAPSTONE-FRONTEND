@@ -11,6 +11,7 @@ import { MobileValidationComponent } from './mobile-validation/mobile-validation
 import { RechargeComponent } from './recharge/recharge.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { SuccessComponent } from './success/success.component';
+import { UserRegisterComponent } from './user-register/user-register.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { SuccessComponent } from './success/success.component';
     RechargeComponent,
     AdminDashboardComponent,
     SuccessComponent,
+    UserRegisterComponent,
   ],
   imports: [
     BrowserModule,
