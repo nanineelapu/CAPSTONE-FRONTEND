@@ -5,6 +5,7 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { RechargeComponent } from './recharge/recharge.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { SuccessComponent } from './success/success.component';
+import { SubscriberFormComponent } from './subscriber-form/subscriber-form.component';
 
 const routes: Routes = [
   { path: '', component: MobileValidationComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'recharge', component: RechargeComponent },
   { path: 'admin-dashboard', component: AdminDashboardComponent },
   { path: 'success', component: SuccessComponent },
+  { path: 'add-customer', component: SubscriberFormComponent },
   { path: '**', redirectTo: '' },
 ];
 const routerOptions: ExtraOptions = {

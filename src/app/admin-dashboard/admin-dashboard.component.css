@@ -23,8 +23,8 @@ body {
     width: 100%;
     height: 100%;
     background-color: black;
-    background-image: url(https://firebasestorage.googleapis.com/v0/b/naniportfolio-cadd2.appspot.com/o/golden-flare-effect-background.jpg?alt=media&token=fa7e9b73-1dd9-4393-b075-f0334a9befe5);
-    background-position: 80% 0;
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/naniportfolio-cadd2.appspot.com/o/fire-sparks-background-realistic-flame-border-black-design-space.jpg?alt=media&token=92a5d2e5-de7f-4da9-aa99-0e7094a2e4eb);
+    background-position: 50% 0;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -72,13 +72,14 @@ body {
 h2 {
     font-weight: 700;
     color: white;
+    padding: 2vw 0vw;
     /* font-family: "Funnel Display", sans-serif; */
 }
 
 .step h1 {
     /* font-family: "Funnel Display", sans-serif; */
     font-size: 12vw;
-    padding: 4vw 6vw;
+    padding: 4vw 0vw;
 }
 
 /* ----------  NAVBAR  ---------- */
@@ -90,7 +91,7 @@ nav {
     align-items: center;
     gap: 1.5rem;
     margin: 0vw 0vw;
-    padding: 2vw 4vw;
+    padding: 4vw 4vw;
     background: transparent;
     color: white;
 }
@@ -179,6 +180,8 @@ nav a {
 
 .card-body {
     padding: 1.5rem;
+    /* border: px solid white; */
+    border-radius: 20px;
 }
 
 /* ----------  TABLE STYLES  ---------- */
@@ -186,33 +189,41 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 1rem;
+    /* border: 3px solid white; */
+    /* border-radius: 30px; */
 }
 
 th,
 td {
     padding: 1vw;
     text-align: left;
-    border: 1px solid var(--border-color);
+    border: 3px solid white;
+    border-radius: 30px;
 }
 
 th {
     background-color: transparent;
     font-weight: 600;
     color: white;
+    border: 3px solid white;
+    border-radius: 30px;
 }
 
 tr:nth-child(even) {
     background-color: transparent;
+    border: 3px solid white;
+    border-radius: 30px;
 }
 
 tr:hover {
-    background-color: black;
+    /* background-color: black; */
     color: white;
 }
 
 tr {
     color: white;
-    border: 1px solid white;
+    border: 3px solid white;
+    border-radius: 30px;
 }
 
 /* ----------  FORM STYLES  ---------- */

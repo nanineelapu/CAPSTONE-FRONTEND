@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile Prepaid Recharge</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="page-animation">
+      <nav>
+        <div class="icon" style="gap: 10px; display: flex; align-items: center">
+          <a
+            routerLink="/"
+            style="display: flex; align-items: center; gap: 10px"
+          >
+            <i
+              class="fas fa-broadcast-tower"
+              style="font-size: 20px"
+              gap="10px"
+            ></i> </a
+          ><span
+            style="font-size: 1vw"
+            style="font-size: clamp(18px, 2vw, 42px)"
+            id="spaning"
+            ><strong> Mobi-Comm Ltd.</strong>
+          </span>
+        </div>
+
+        <div class="items">
+          <button>
+            <a routerLink="/"><strong> User Recharge </strong></a>
+          </button>
+          <button>
+            <a routerLink="/admin-login"><strong> Admin Login </strong></a>
+          </button>
+        </div>
+      </nav>
+      <div class="container">
+        <main>
+          <div class="login-container">
+            <h2 id="loginTitle">Add Subscriber</h2>
+            <form [formGroup]="subscriberForm" (ngSubmit)="onSubmit()">
+              <div class="input-group">
+                <label for="mobileNumber">
+                  <i class="fas fa-phone" style="margin-right: 0.5vw"></i>
+                  Mobile Number
+                </label>
+                <input
+                  id="mobileNumber"
+                  type="text"
+                  formControlName="mobileNumber"
+                  placeholder="Enter 10-digit mobile number"
+                  maxlength="10"
+                />
+                <div
+                  style="color: white"
+                  *ngIf="
+                    subscriberForm.get('mobileNumber')?.hasError('required') &&
+                    subscriberForm.get('mobileNumber')?.touched
+                  "
+                  class="error-message"
+                >
+                  Mobile number is required
+                </div>
+                <div
+                  style="color: white"
+                  *ngIf="
+                    subscriberForm.get('mobileNumber')?.hasError('pattern') &&
+                    subscriberForm.get('mobileNumber')?.touched
+                  "
+                  class="error-message"
+                >
+                  Enter a valid 10-digit number
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label for="name">
+                  <i class="fas fa-user" style="margin-right: 0.5vw"></i>
+                  Name
+                </label>
+                <input
+                  id="name"
+                  type="text"
+                  formControlName="name"
+                  placeholder="Enter your name"
+                />
+                <div
+                  style="color: white"
+                  *ngIf="
+                    subscriberForm.get('name')?.hasError('required') &&
+                    subscriberForm.get('name')?.touched
+                  "
+                  class="error-message"
+                >
+                  Name is required
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label for="email">
+                  <i class="fas fa-envelope" style="margin-right: 0.5vw"></i>
+                  Email
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  formControlName="email"
+                  placeholder="Enter your email"
+                />
+                <div
+                  style="color: white"
+                  *ngIf="
+                    subscriberForm.get('email')?.hasError('required') &&
+                    subscriberForm.get('email')?.touched
+                  "
+                  class="error-message"
+                >
+                  Email is required
+                </div>
+                <div
+                  style="color: white"
+                  *ngIf="
+                    subscriberForm.get('email')?.hasError('email') &&
+                    subscriberForm.get('email')?.touched
+                  "
+                  class="error-message"
+                >
+                  Enter a valid email
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label for="currentPlanId">
+                  <i class="fas fa-list" style="margin-right: 0.5vw"></i>
+                  Current Plan
+                </label>
+                <input type="text" formControlName="currentPlanId" />
+                <div
+                  style="color: white"
+                  *ngIf="
+                    subscriberForm.get('currentPlanId')?.hasError('required') &&
+                    subscriberForm.get('currentPlanId')?.touched
+                  "
+                  class="error-message"
+                >
+                  Current plan is required
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                id="submit"
+                [disabled]="subscriberForm.invalid"
+              >
+                Add Subscriber
+              </button>
+            </form>
+          </div>
+        </main>
+      </div>
+      <footer>
+        <div class="footer-links">
+          <a href="#">Terms of Service</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Help & Support</a>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2023 Mobile Prepaid Recharge. All rights reserved.</p>
+          <p class="version">v1.0.0</p>
+        </div>
+      </footer>
+    </div>
+    <script src="login.js"></script>
+  </body>
+</html>

@@ -135,4 +135,18 @@ export class ApiService {
     console.error('API error:', errorMessage);
     return throwError(() => new Error(errorMessage));
   }
+  addSubscriber(subscriberData: {
+    mobileNumber: string;
+    name: string;
+    email: string;
+    currentPlanId: number;
+  }): Observable<any> {
+    return this.http.post(
+      `${this.apiUrl}/api/admin/addsubscriber`,
+      subscriberData,
+      {
+        headers: this.getHeaders(),
+      }
+    );
+  }
 }

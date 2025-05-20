@@ -290,7 +290,7 @@ button:hover {
 }
 
 nav a {
-    color: white;
+
     text-decoration: none;
 }
 
@@ -327,7 +327,6 @@ nav a {
 }
 
 .recharge-container h2 {
-    font-family: 'Funnel Display', sans-serif;
     font-weight: 700;
     margin-bottom: 1rem;
     text-align: center;

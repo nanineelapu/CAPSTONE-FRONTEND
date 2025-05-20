@@ -1,0 +1,308 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* ----------  CSS VARIABLES  ---------- */
+:root {
+    --primary-color: #4a6bff;
+    --secondary-color: #f5f7ff;
+    --text-color: white;
+    --light-text: #cccccc;
+    --error-color: #ff6b6b;
+    --border-color: white;
+    --shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+/* ----------  GLOBAL RESET  ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    background-image: url(https://cdn.prod.website-files.com/67d94a83b4dcb2e406b897dc/67e0d09ab795eb7cff270e70_Features%20Bg%20V2.png);
+    background-position: 50% 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+body {
+    display: flex;
+    /* centres the page vertically if wanted */
+    flex-direction: column;
+    align-items: center;
+    background: var(--secondary-color);
+    color: white;
+}
+
+/* Page animation */
+body {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.step {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    color: white;
+    font-size: 2rem;
+    z-index: 1;
+    /* or any positive value */
+    pointer-events: none;
+}
+
+
+.step h1 {
+    font-family: "Funnel Display", sans-serif;
+    font-size: 12vw;
+    padding: 4vw 6vw;
+    color: white;
+}
+
+/* ----------  NAVBAR  ---------- */
+nav {
+    width: 100%;
+    margin: 0;
+    height: 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 0vw 0vw;
+    padding: 2vw 2vw;
+    background: transparent;
+    color: white;
+}
+
+button {
+    border: 2px solid white;
+    padding: .5vw 1vw;
+    border-radius: 40px;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2vw;
+    transition: all 0.4s ease;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3vw;
+    margin-top: 2vw;
+    font-size: 1.5vw;
+}
+
+.buttons button {
+    padding: 1vw 2vw;
+    border-radius: 1vw;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+.buttons button:hover {
+    background-color: white;
+    color: black;
+}
+
+button:hover {
+    background: white;
+    color: black;
+}
+
+.items {
+    display: flex;
+    gap: 1vw;
+}
+
+nav a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ----------  LAYOUT WRAPPER  ---------- */
+@keyframes fadeInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0;
+    padding: 0 1.25rem;
+    animation: fadeInFromBottom 0.6s ease-out forwards;
+}
+
+/* ----------  LOGIN CARD  ---------- */
+.login-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: transparent;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.login-container h2 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: white;
+    font-size: 3vw;
+}
+
+/* ----------  FORM ELEMENTS  ---------- */
+.input-group {
+    position: relative;
+    margin-bottom: 1.25rem;
+}
+
+.input-group label {
+    font-size: 1.5vw;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.7rem;
+    color: white;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 1vw 1.5vw;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size: 1.2vw;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    border-radius: 30px;
+}
+
+#submit {
+    background-color: transparent;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+    padding: 1vw 0;
+    border: 2px solid white;
+    border-radius: 40px;
+    color: white;
+    font-size: 1.2vw;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#submit:hover {
+    background-color: white;
+    color: black;
+    border-radius: 30px;
+}
+
+/* ----------  MEDIA QUERIES  ---------- */
+@media screen and (max-width: 768px) {
+
+    .login-container {
+        padding: 1rem;
+    }
+
+    .login-container h2 {
+        font-size: 2.5vw;
+    }
+
+    .input-group label {
+        font-size: 1.2vw;
+    }
+
+    .input-group input {
+        padding: 1vw 1vw;
+        font-size: 1vw;
+    }
+
+    button {
+        font-size: 1.2vw;
+        padding: 1vw 2vw;
+    }
+
+    .login-container {
+        max-width: 90%;
+    }
+
+    .step h1 {
+        font-size: 10vw;
+        padding: 4vw;
+        text-align: center;
+    }
+
+    .container {
+        padding: 4vw;
+    }
+
+    .login-container h2 {
+        font-size: 4vw;
+    }
+
+    .input-group label {
+        font-size: 3vw;
+    }
+
+    .input-group input {
+        padding: 3vw 4vw;
+        font-size: 3vw;
+    }
+
+    button {
+        font-size: 3vw;
+        padding: 3vw 4vw;
+    }
+
+    .login-container {
+        max-width: 90%;
+    }
+
+
+
+}
